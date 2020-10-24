@@ -20,7 +20,7 @@ namespace RSSNotify.Processes
         {
             var reader = new RSSReader(_appSettings.RSSFeedUrl);
             var items = reader.GetFeedItems();
-            var newItems = items.Where(x => x.LastUpdatedTime >= _lastDateTime);
+            var newItems = items.Where(x => x.LastUpdatedTime > _lastDateTime);
 
             if (!newItems.Any())
                 return;

@@ -17,6 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RSSNotify.Processes\RSSNotify.csproj" />
+    <ProjectReference Include="..\RSSNotify.Processes\RSSNotify.Processes.csproj" />
   </ItemGroup>
 </Project>
