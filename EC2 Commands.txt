@@ -1,0 +1,12 @@
+##These are the commands that I recall having to run on the EC2 to install .net core framework etc..
+
+sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+sudo yum install jq dotnet-sdk-3.1 -y
+
+## Copy solution files to /home/ec2-user/RSSNotify ##
+
+sudo dotnet publish -c Release -o ./PublishedApp
+sudo cp /home/ec2-user/RSSNotify/RSSNotify.WorkerService/RSSNotify.service /etc/systemd/system/RSSNotify.service
+sudo systemctl daemon-reload
+sudo systemctl enable RSSNotify
+sudo systemctl start RSSNotify

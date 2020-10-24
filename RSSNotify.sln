@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSSNotify.Console", "RSSNotify.Console\RSSNotify.Console.csproj", "{A886532B-E9AA-463C-B909-C232E506083F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSSNotify.Configuration", "RSSNotify.Configuration\RSSNotify.Configuration.csproj", "{99EA0907-9419-4F5B-AF20-FF5CEEC66A45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "appSettings", "appSettings", "{2C6F36BB-D57F-4CFB-942B-42277F019330}"
+	ProjectSection(SolutionItems) = preProject
+		appSettings\appSettings.json = appSettings\appSettings.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSSNotify", "RSSNotify.Processes\RSSNotify.csproj", "{D55C71A3-8C80-4134-9CC5-38B257C06E2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSNotify.WorkerService", "RSSNotify.WorkerService\RSSNotify.WorkerService.csproj", "{6F89BA77-DC02-4569-BF92-D8B99AE09C5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A886532B-E9AA-463C-B909-C232E506083F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A886532B-E9AA-463C-B909-C232E506083F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A886532B-E9AA-463C-B909-C232E506083F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A886532B-E9AA-463C-B909-C232E506083F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99EA0907-9419-4F5B-AF20-FF5CEEC66A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99EA0907-9419-4F5B-AF20-FF5CEEC66A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99EA0907-9419-4F5B-AF20-FF5CEEC66A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99EA0907-9419-4F5B-AF20-FF5CEEC66A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D55C71A3-8C80-4134-9CC5-38B257C06E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D55C71A3-8C80-4134-9CC5-38B257C06E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D55C71A3-8C80-4134-9CC5-38B257C06E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D55C71A3-8C80-4134-9CC5-38B257C06E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F89BA77-DC02-4569-BF92-D8B99AE09C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F89BA77-DC02-4569-BF92-D8B99AE09C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F89BA77-DC02-4569-BF92-D8B99AE09C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F89BA77-DC02-4569-BF92-D8B99AE09C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC6F173E-43FD-4505-B6C0-A8E346F23AC1}
+	EndGlobalSection
+EndGlobal

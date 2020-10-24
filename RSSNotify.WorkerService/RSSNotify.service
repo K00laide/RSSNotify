@@ -1,0 +1,22 @@
+﻿[Unit]
+Description=RSSNotify polls RSS feed and sends message to discord channel
+
+[Service]
+Type=notify
+# will set the Current Working Directory (CWD). Worker service will have issues without this setting
+WorkingDirectory=/home/ec2-user/RSSNotify/PublishedApp/
+# systemd will run this executable to start the service
+ExecStart=/home/ec2-user/RSSNotify/PublishedApp/RSSNotify.WorkerService
+# to query logs using journalctl, set a logical name here  
+SyslogIdentifier=RSSNotify
+
+# Use your username to keep things simple.
+# If you pick a different user, make sure dotnet and all permissions are set correctly to run the app
+# To update permissions, use 'chown yourusername -R /srv/Worker' to take ownership of the folder and files,
+#       Use 'chmod +x /srv/Worker/Worker' to allow execution of the executable file
+User=ec2-user
+
+# ensure the service restarts after crashing
+Restart=always
+# amount of time to wait before restarting the service              
+RestartSec=5
