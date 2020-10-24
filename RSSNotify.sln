@@ -12,9 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "appSettings", "appSettings"
 		appSettings\appSettings.json = appSettings\appSettings.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSSNotify", "RSSNotify.Processes\RSSNotify.csproj", "{D55C71A3-8C80-4134-9CC5-38B257C06E2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSSNotify.Processes", "RSSNotify.Processes\RSSNotify.Processes.csproj", "{D55C71A3-8C80-4134-9CC5-38B257C06E2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSNotify.WorkerService", "RSSNotify.WorkerService\RSSNotify.WorkerService.csproj", "{6F89BA77-DC02-4569-BF92-D8B99AE09C5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSSNotify.WorkerService", "RSSNotify.WorkerService\RSSNotify.WorkerService.csproj", "{6F89BA77-DC02-4569-BF92-D8B99AE09C5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
