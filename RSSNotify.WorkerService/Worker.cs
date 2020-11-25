@@ -7,25 +7,15 @@ namespace RSSNotify.WorkerService
 {
     public class Worker : BackgroundService
     {
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            System.Console.WriteLine("Fetching configuration");
-            var appSettings = Configuration.Configuration.GetConfiguration();
+            return Task.Run(() => new MultithreadedPoller().LaunchMultiThreadedPollers(stoppingToken));
+        }
 
-            System.Console.WriteLine("Initializing Poller");
-            var poller = new RSSPoller();
-
-            var pollerDelay = appSettings.PollerDelay;
-            System.Console.WriteLine($"Begining polling with delay of {pollerDelay}");
-
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                System.Console.WriteLine("Polling feed for new items");
-                poller.PollFeed();
-                await Task.Delay(appSettings.PollerDelay, stoppingToken);
-            }
-
-            System.Console.WriteLine("Canellation has been requested");
+        public override async Task StopAsync(CancellationToken cancellationToken)
+        {
+            System.Console.WriteLine("Cancellation has been requested, setting cancellationToken");
+            await base.StopAsync(cancellationToken);
         }
     }
 }
