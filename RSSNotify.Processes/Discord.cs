@@ -9,11 +9,11 @@ namespace RSSNotify.Processes
     public class Discord
     {
         private DiscordSocketClient _client;
-        private ApplicationSettings _appSettings = null;
+        private PollerInstance _pollerInstance = null;
 
-        public Discord()
+        public Discord(PollerInstance pollerInstance)
         {
-            _appSettings = Configuration.Configuration.GetConfiguration();
+            _pollerInstance = pollerInstance;
             Initialize();
         }
 
@@ -26,12 +26,12 @@ namespace RSSNotify.Processes
         {
             _client = new DiscordSocketClient();
             _client.Log += Log;
-            await _client.LoginAsync(TokenType.Bot, _appSettings.DiscordToken);
+            await _client.LoginAsync(TokenType.Bot, _pollerInstance.DiscordToken);
             await _client.StartAsync();
 
             _client.Ready += () =>
             {
-                Console.WriteLine("Bot is connected!");
+                Console.WriteLine($"({_pollerInstance.Description}) " + "Bot is connected!");
                 return Task.CompletedTask;
             };
 
@@ -40,7 +40,7 @@ namespace RSSNotify.Processes
 
         private Task Log(LogMessage msg)
         {
-            Console.WriteLine(msg.ToString());
+            Console.WriteLine($"({_pollerInstance.Description}) " + msg.ToString());
             return Task.CompletedTask;
         }
 
@@ -49,7 +49,7 @@ namespace RSSNotify.Processes
             while (_client.ConnectionState != global::Discord.ConnectionState.Connected)
                 System.Threading.Thread.Sleep(1000);
 
-            var channel = _client.GetChannel(Convert.ToUInt64(_appSettings.BotChannelId)) as IMessageChannel;
+            var channel = _client.GetChannel(Convert.ToUInt64(_pollerInstance.DiscordChannelId)) as IMessageChannel;
             channel.SendMessageAsync(message + Environment.NewLine + url);
         }
     }
